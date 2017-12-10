@@ -253,7 +253,9 @@ __**Modération**__
 **setchannel** : Choisir le channel oú seront poster les messages de bienvenues et d'aurevoir. Utilisation : mod!setchannel #channel
 **setwelcome** : Choisir le message de bienvenue. Utilisation : mod!setwelcome <message>
 **setleave** : Choisir le message d'aurevoir. Utilisation : mod!setleave <message>
-**setdm** : Choiris le message de bienvenue en message privé. Utilisation : mod!setdm <message>
+**setdm** : Choisir le message de bienvenue en message privé. Utilisation : mod!setdm <message>
+
+**setautorole** : Choisir le role ajouté automatiquement à l'arrivée d'un nouveau membre sur le Discord. Utilisation : mod!setautorole <nom du role>
             `)
             message.react("✅")
             message.channel.send(member.toString() + " Je t'ai envoyé les commandes en MP !")
@@ -402,7 +404,7 @@ message.channel.bulkDelete(messagecount);
         break;
         case "setchannel":
         if (!message.member.roles.find('name', 'Administrateur')) return message.channel.send('**Tu as besoin du role `Administrateur` pour faire cette commande !**') // This returns if it CANT find the owner role on them. It then uses the function to send to message.channel, and deletes the message after 120000 milliseconds (2minutes)
-        if (!message.mentions.channels.first() && args.join(" ").toUpperCase() !== 'NONE') return message.channel.send('**Tu as oublié de mettre un channel !**\n > *+setchannel <#channel>*') // This returns if they don't message a channel, but we also want it to continue running if they want to disable the log
+        if (!message.mentions.channels.first() && args.join(" ").toUpperCase() !== 'NONE') return message.channel.send('**Tu as oublié de mettre un channel !**\n > *mod!setchannel <#channel>*') // This returns if they don't message a channel, but we also want it to continue running if they want to disable the log
     
         // Fetch the new channel they mentioned
         let newChannel;
@@ -417,7 +419,7 @@ message.channel.bulkDelete(messagecount);
         case "setdm":
             // Return Statements
     if (!message.member.roles.find('name', 'Administrateur')) return message.channel.send('**Tu as besoin du role `Administrateur` pour faire cette commande !**') // This returns if it CANT find the owner role on them. It then uses the function to send to message.channel, and deletes the message after 120000 milliseconds (2minutes)
-    if (!args2.join(" ") && args.join(" ").toUpperCase() !== 'NONE') return message.channel.send('**Tu as oublié de mettre un message !**\n > *+setdm <message>*') // This returns if they don't message a channel, but we also want it to continue running if they want to disable the log
+    if (!args2.join(" ") && args.join(" ").toUpperCase() !== 'NONE') return message.channel.send('**Tu as oublié de mettre un message !**\n > *mod!setdm <message>*') // This returns if they don't message a channel, but we also want it to continue running if they want to disable the log
     // ^^^ This returns if they didnt type any dedscription
 
     // Fetch the new channel they mentioned
@@ -433,7 +435,7 @@ message.channel.bulkDelete(messagecount);
         case "setwelcome":
     // Return Statements
     if (!message.member.roles.find('name', 'Administrateur')) return message.channel.send('**Tu as besoin du role `Administrateur` pour faire cette commande !**') // This returns if it CANT find the owner role on them. It then uses the function to send to message.channel, and deletes the message after 120000 milliseconds (2minutes)
-    if (!args2.join(" ") && args2.join(" ").toUpperCase() !== 'NONE') return message.channel.send('**Tu as oublié de mettre un message !**\n > *+setwelcome <message>*') // This returns if they don't message a channel, but we also want it to continue running if they want to disable the log
+    if (!args2.join(" ") && args2.join(" ").toUpperCase() !== 'NONE') return message.channel.send('**Tu as oublié de mettre un message !**\n > *mod!setwelcome <message>*') // This returns if they don't message a channel, but we also want it to continue running if they want to disable the log
 
     let newMessage2;
     // Fetch the new channel they mentioned
@@ -448,7 +450,7 @@ message.channel.bulkDelete(messagecount);
         case "setleave":
     // Return Statements
     if (!message.member.roles.find('name', 'Administrateur')) return message.channel.send('**Tu as besoin du role `Administrateur` pour faire cette commande !**') // This returns if it CANT find the owner role on them. It then uses the function to send to message.channel, and deletes the message after 120000 milliseconds (2minutes)
-    if (!args2.join(" ") && args.join(" ").toUpperCase() !== 'NONE') return message.channel.send('**Tu as oublié de mettre un message !**\n > *+setleave <message>*') // This returns if they don't message a channel, but we also want it to continue running if they want to disable the log
+    if (!args2.join(" ") && args.join(" ").toUpperCase() !== 'NONE') return message.channel.send('**Tu as oublié de mettre un message !**\n > *mod!setleave <message>*') // This returns if they don't message a channel, but we also want it to continue running if they want to disable the log
 
     // Fetch the new channel they mentioned
     let newMessage3;
@@ -463,7 +465,7 @@ message.channel.bulkDelete(messagecount);
         break;
         case "setautorole":
         if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('Tu as besoin de la permission `Administrateur` pour faire cette commande !') // Tell them that they dont have the proper perms
-        if (!args2.join(" ")) return message.channel.send('Merci de mettre un grade `+setautorole <nom du role>`') // Tell them if they didn't supply arguments
+        if (!args2.join(" ")) return message.channel.send('Merci de mettre un grade `mod!setautorole <nom du role>`') // Tell them if they didn't supply arguments
     
         db.updateText(`autoRole_${message.guild.id}`, args2.join(" ").trim()).then(i => { // .trim() removes the whitespaces on both ends of the string. 
     
