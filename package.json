@@ -1,0 +1,11 @@
+{
+  "name": "genosmoderation",
+  "version": "1.0.0",
+  "description": "Bot de Modération créer par Azecko.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Azecko",
+  "license": "ISC"
+}
