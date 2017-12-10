@@ -14,8 +14,6 @@ var bot = new Discord.Client();
 
 const modrole = "Modérateur";
 
-const TOKEN = "Mzg5NDY2ODM5MjUzNTE2Mjg4.DQ8KtQ.Pmosj2P94g9_vE9YwAdwX_n6oKY"
-
 var client = new Discord.Client();
 
 const queue = new Map();
@@ -481,4 +479,4 @@ message.channel.bulkDelete(messagecount);
     }
 });
 
-bot.login(TOKEN);
+bot.login(process.env.TOKEN);
