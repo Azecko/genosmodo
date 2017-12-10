@@ -113,7 +113,7 @@ bot.on("guildMemberRemove", function(member) {
     guild.owner.send("Merci de m'avoir Ajouté sur ton serveur Discord ! N'hésite pas à faire `mod!help` pour voir à quoi je sers !");
     });
 
-    bot.on('guildRemove_', guild => {
+    bot.on('guildRemove', guild => {
         bot.user.setActivity("mod!help sur " + bot.guilds.size + " serveurs !", {url:"https://www.twitch.tv/zelkibot", type: "WATCHING"})
     })
 
