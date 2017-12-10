@@ -7,5 +7,27 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Azecko",
-  "license": "ISC"
+  "license": "ISC",
+    "dependencies": {
+    "big-text.js": "^1.0.1",
+    "discord-anti-spam": "^1.1.1",
+    "discord-eco": "0.0.10",
+    "discord.js": "github:hydrabolt/discord.js",
+    "ffmpeg": "0.0.4",
+    "ffmpeg-binaries": "^3.2.2-3",
+    "figlet": "^1.2.0",
+    "flip-text": "^1.1.0",
+    "fortnite": "^2.0.1",
+    "fs": "0.0.1-security",
+    "moment": "^2.19.3",
+    "node-pre-gyp": "^0.6.39",
+    "opusscript": "0.0.4",
+    "processenv": "^0.1.1",
+    "quick-db": "^1.0.5",
+    "quick.db": "^2.0.7",
+    "reverse-arguments": "^1.0.0",
+    "rocketleague": "^1.0.0",
+    "simple-youtube-api": "^3.0.1",
+    "superagent": "^3.8.1",
+    "ytdl-core": "^0.18.1"
 }
