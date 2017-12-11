@@ -360,7 +360,7 @@ message.channel.bulkDelete(messagecount);
         db.fetchObject(`messageChannel_${message.guild.id}`).then(channelIDFetched => {
     
             // Verify Arguments - If the text is blank, that means it hasn't been defined yet.
-            if (!message.guild.channels.get(channelIDFetched.text)) channel = '*none*'
+            if (!message.guild.channels.get(channelIDFetched.text)) channel = '*Pas de channel pour les messages de bienvenues et aurevoirs.*'
             else channel = message.guild.channels.get(channelIDFetched.text)
             // What is happening here is that it is trying to see if the CHANNEL ID stored in channelIDFetched.text is a valid channel in the guild, if not it sets channel to none, if it is it sets channel to the channel
     
