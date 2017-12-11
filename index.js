@@ -111,9 +111,11 @@ bot.on("guildMemberRemove", function(member) {
     bot.on(`guildCreate`, guild => {
     bot.user.setActivity("mod!help sur " + bot.guilds.size + " serveurs !", {url:"https://www.twitch.tv/zelkibot", type: "WATCHING"})
     guild.owner.send("Merci de m'avoir Ajouté sur ton serveur Discord ! N'hésite pas à faire `mod!help` pour voir à quoi je sers !");
+        bot.channels.get('381199796372766720').send(`J'ai été ajouté au serveur : ${guild.name} ! Propriétaire du serveur : ${guild.owner.user.toString()}`);
     });
 
-    bot.on('guildRemove', guild => {
+    bot.on('guildDelete', guild => {
+        bot.channels.get('381199796372766720').send(`J'ai été retiré au serveur : ${guild.name} ! Propriétaire du serveur : ${guild.owner.user.toString()}`);
         bot.user.setActivity("mod!help sur " + bot.guilds.size + " serveurs !", {url:"https://www.twitch.tv/zelkibot", type: "WATCHING"})
     })
 
