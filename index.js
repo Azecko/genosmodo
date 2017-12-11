@@ -43,7 +43,14 @@ var fortunes = [
 var servers = {};
 
 bot.on("ready", function () {
-    bot.user.setActivity("mod!help sur " + bot.guilds.size + " serveurs !", {url:"https://www.twitch.tv/zelkibot", type: "WATCHING"})
+        var games = [
+        "mod!help | " + bot.guilds.size + " Serveurs !",
+        "mod!help | " + bot.users.size + " Utilisateurs !",
+        "mod!help | " + bot.channels.size + " Channels !"
+    ]
+    bot.user.setActivity(setInterval(function() {
+        bot.user.setActivity(games[Math.floor(Math.random() * games.length)], {url:"https://www.twitch.tv/zelkibot", type: "WATCHING"})
+    }, 10000))
     console.log("Je suis prêt à me rendre sur " + bot.guilds.size + " serveur(s) ! Sous le pseudo de " + bot.user.username + " !");
 });
 
