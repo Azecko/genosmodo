@@ -50,7 +50,7 @@ bot.on("ready", function () {
     ]
     bot.user.setActivity(setInterval(function() {
         bot.user.setActivity(games[Math.floor(Math.random() * games.length)], {url:"https://www.twitch.tv/zelkibot", type: "WATCHING"})
-    }, 10000))
+    }, 5000))
     console.log("Je suis prêt à me rendre sur " + bot.guilds.size + " serveur(s) ! Sous le pseudo de " + bot.user.username + " !");
 });
 
