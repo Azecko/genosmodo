@@ -476,6 +476,27 @@ message.channel.bulkDelete(messagecount);
         case "invite":
             message.channel.send("Tu veux m'inviter sur ton serveur ? Merci c'est gentil ! Voilà pour toi : https://discordapp.com/api/oauth2/authorize?client_id=389466839253516288&permissions=8&scope=bot !")
         break;
+            case "eval":
+        if(message.author.id !== "176041361714184193") return;
+        var args = message.content.split(" ").slice(1);        
+          function clean(text) {
+            if (typeof(text) === "string")
+              return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
+            else
+                return text;
+          }
+        try {
+          const code = args.join(" ");
+          let evaled = eval(code);
+    
+          if (typeof evaled !== "string")
+            evaled = require("util").inspect(evaled);
+    
+          message.channel.send(clean(evaled), {code:"xl"});
+        } catch (err) {
+          message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
+        }
+        break;
             default:
             message.channel.send("Commande invalide ^^")
     }
